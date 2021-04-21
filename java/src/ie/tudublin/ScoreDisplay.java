@@ -9,7 +9,10 @@ import processing.data.TableRow;
 
 public class ScoreDisplay extends PApplet
 {
-	ArrayList<Note> notes = new ArrayList<Note>();
+	public ArrayList<Note> convertStringToArrayList(String score){
+		ArrayList<Note> notes = new ArrayList<Note>();
+	}
+	
 
 	String score = "DEFGABcd";
 	//String score = "D2E2F2G2A2B2c2d2";
@@ -25,17 +28,38 @@ public class ScoreDisplay extends PApplet
 		println(i);
 	}
 
+	public void printScores()
+	{
+		for(String sss:score.split(" "))
+		{
+			System.out.println(sss);
+
+			for(int i = score.length() - 1; i >= 0; i--)
+			{
+				if(score[] = 1)
+				{
+					System.out.println("Quaver");
+				}
+				else
+				{
+					System.out.println("Crochet");
+				}
+			}
+		}
+	}
+
 	public void loadScore()
 	{
-		for(char c : score.toCharArray())
+		for(int i = score.length() - 1; i >= 0; i--)
 		{
-			notes.add(c);
+			notes.add(score.charAt(i));
 		}
 	}
 
 	public void setup() 
 	{
 		loadScore();
+		printScores();
 	}
 
 	public void draw()
